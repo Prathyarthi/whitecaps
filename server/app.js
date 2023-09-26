@@ -24,12 +24,12 @@ app.use(cookieParser());
 
 import userRoutes from './routes/userRoutes.js';
 import courseRoutes from './routes/courseRoutes.js';
-// import paymentRoutes from './routes/paymentRoutes.js';
+import paymentRoutes from './routes/paymentRoutes.js';
 // import miscRoutes from './routes/miscellaneousRoutes.js';
 
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/courses', courseRoutes);
-// app.use('/api/v1/payments', paymentRoutes);
+app.use('/api/v1/payments', paymentRoutes);
 // app.use('/api/v1', miscRoutes);
 
 app.all('*', (_req, res) => {
