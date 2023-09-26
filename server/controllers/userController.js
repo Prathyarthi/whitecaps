@@ -18,7 +18,7 @@ const cookieOptions = {
 export const signup = asyncHandler(async (req, res, next) => {
     const { name, email, password } = req.body;
 
-    if (!fullName || !email || !password) {
+    if (!name || !email || !password) {
         return next(new AppError('All fields are required', 400));
     }
 
