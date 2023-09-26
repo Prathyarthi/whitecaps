@@ -80,7 +80,7 @@ export const cancelSubscription = asyncHandler(async (req, res, next) => {
 
     if (user.role === 'ADMIN') {
         return next(
-            new AppError('Admin does not need to cannot cancel subscription', 400)
+            new AppError('Admin cannot cancel subscription', 400)
         );
     }
 
@@ -178,7 +178,6 @@ export const allPayments = asyncHandler(async (req, res, _next) => {
     };
 
     const monthlyWisePayments = allPayments.items.map((payment) => {
-        // We are using payment.start_at which is in unix time, so we are converting it to Human readable format using Date()
         const monthsInNumbers = new Date(payment.start_at * 1000);
 
         return monthNames[monthsInNumbers.getMonth()];
@@ -206,3 +205,5 @@ export const allPayments = asyncHandler(async (req, res, _next) => {
         monthlySalesRecord,
     });
 });
+
+

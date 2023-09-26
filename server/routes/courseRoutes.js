@@ -10,7 +10,7 @@ import {
 } from '../controllers/courseController.js';
 import {
     authorizeRoles,
-    authorizeSubscribers,
+    authorizedSubscribers,
     isLoggedIn,
 } from '../middlewares/authMiddleware.js';
 import upload from '../middlewares/multerMiddleware.js';
@@ -30,7 +30,7 @@ router
 
 router
     .route('/:id')
-    .get(isLoggedIn, authorizeSubscribers, getLecturesByCourseId)
+    .get(isLoggedIn, authorizedSubscribers, getLecturesByCourseId)
     .post(
         isLoggedIn,
         authorizeRoles('ADMIN'),

@@ -2,8 +2,8 @@ import { Router } from 'express';
 import {
     contactUs,
     userStats,
-} from '../controllers/miscellaneous.controller.js';
-import { authorizeRoles, isLoggedIn } from '../middlewares/auth.middleware.js';
+} from '../controllers/otherController.js';
+import { authorizeRoles, isLoggedIn } from '../middlewares/authMiddleware.js';
 
 const router = Router();
 
